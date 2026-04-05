@@ -6,7 +6,7 @@ def scrape_dynamic():
     driver = webdriver.Chrome()
 
     driver.get("http://quotes.toscrape.com/js/")
-    time.sleep(3)
+    time.sleep(100)
 
     quotes = driver.find_elements(By.CLASS_NAME, "quote")
 

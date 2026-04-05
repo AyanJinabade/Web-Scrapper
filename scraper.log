@@ -84,3 +84,109 @@ Traceback (most recent call last):
   File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\common.py", line 652, in check_parent_directory
     raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
 OSError: Cannot save file into a non-existent directory: 'data\processed'
+2026-04-05 12:51:26,181 - INFO - \U0001f680 Pipeline started
+2026-04-05 12:51:26,184 - INFO - Scraping static data...
+2026-04-05 12:51:37,093 - INFO - Scraping dynamic data...
+2026-04-05 12:52:00,810 - INFO - Total records scraped: 60
+2026-04-05 12:52:00,810 - INFO - Cleaning data...
+2026-04-05 12:52:00,847 - INFO - Saving to CSV...
+2026-04-05 12:52:00,850 - ERROR - \u274c Pipeline failed: Cannot save file into a non-existent directory: 'data\processed'
+Traceback (most recent call last):
+  File "c:\Users\ilham\Desktop\Ayan\web_scrapper\main.py", line 44, in run_pipeline
+    save_to_csv(df, "data/processed/quotes.csv")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ilham\Desktop\Ayan\web_scrapper\storage\save_csv.py", line 2, in save_to_csv
+    df.to_csv(filename, index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\core\generic.py", line 3988, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        path_or_buf,
+        ^^^^^^^^^^^^
+    ...<14 lines>...
+        storage_options=storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\formats\format.py", line 1025, in to_csv
+    csv_formatter.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ~~~~~~~~~~^
+        self.filepath_or_buffer,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        storage_options=self.storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as handles:
+    ^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\common.py", line 793, in get_handle
+    check_parent_directory(str(handle))
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\common.py", line 652, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'data\processed'
+2026-04-05 12:56:14,603 - INFO - \U0001f680 Pipeline started
+2026-04-05 12:56:14,604 - INFO - Scraping static data...
+2026-04-05 12:56:24,815 - INFO - Scraping dynamic data...
+2026-04-05 12:58:12,406 - ERROR - \u274c Pipeline failed: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=146.0.7680.178); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62e8b29c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff62e5da0d0+14e90]
+	chromedriver!(No symbol) [0x7ff62e33db2d]
+	chromedriver!(No symbol) [0x7ff62e328ca2]
+	chromedriver!(No symbol) [0x7ff62e34f416]
+	chromedriver!(No symbol) [0x7ff62e3c70e0]
+	chromedriver!(No symbol) [0x7ff62e3e3482]
+	chromedriver!(No symbol) [0x7ff62e389298]
+	chromedriver!(No symbol) [0x7ff62e38a183]
+	chromedriver!GetHandleVerifier [0x7ff62e8dde0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff62e8d8588+313348]
+	chromedriver!GetHandleVerifier [0x7ff62e8f9d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff62e5f6785+31545]
+	chromedriver!GetHandleVerifier [0x7ff62e5ffacc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff62e5e3634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff62e5e37e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff62e5c7e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ffce4bae8d7+17]
+	ntdll!RtlUserThreadStart [0x7ffce5a4c53c+2c]
+Traceback (most recent call last):
+  File "c:\Users\ilham\Desktop\Ayan\web_scrapper\main.py", line 24, in run_pipeline
+    data_dynamic = scrape_dynamic()
+  File "c:\Users\ilham\Desktop\Ayan\web_scrapper\scraper\scraper_selenium.py", line 11, in scrape_dynamic
+    quotes = driver.find_elements(By.CLASS_NAME, "quote")
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 847, in find_elements
+    return self.execute(Command.FIND_ELEMENTS, {"using": by, "value": value})["value"] or []
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 446, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=146.0.7680.178); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff62e8b29c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff62e5da0d0+14e90]
+	chromedriver!(No symbol) [0x7ff62e33db2d]
+	chromedriver!(No symbol) [0x7ff62e328ca2]
+	chromedriver!(No symbol) [0x7ff62e34f416]
+	chromedriver!(No symbol) [0x7ff62e3c70e0]
+	chromedriver!(No symbol) [0x7ff62e3e3482]
+	chromedriver!(No symbol) [0x7ff62e389298]
+	chromedriver!(No symbol) [0x7ff62e38a183]
+	chromedriver!GetHandleVerifier [0x7ff62e8dde0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff62e8d8588+313348]
+	chromedriver!GetHandleVerifier [0x7ff62e8f9d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff62e5f6785+31545]
+	chromedriver!GetHandleVerifier [0x7ff62e5ffacc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff62e5e3634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff62e5e37e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff62e5c7e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ffce4bae8d7+17]
+	ntdll!RtlUserThreadStart [0x7ffce5a4c53c+2c]
+
