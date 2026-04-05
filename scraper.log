@@ -1,0 +1,86 @@
+2026-04-05 11:35:14,167 - INFO - \U0001f680 Pipeline started
+2026-04-05 11:35:14,168 - INFO - Scraping static data...
+2026-04-05 11:35:23,092 - INFO - Scraping dynamic data...
+2026-04-05 11:35:37,332 - INFO - Total records scraped: 60
+2026-04-05 11:35:37,333 - INFO - Cleaning data...
+2026-04-05 11:35:37,363 - INFO - Saving to CSV...
+2026-04-05 11:35:37,366 - ERROR - \u274c Pipeline failed: Cannot save file into a non-existent directory: 'data\processed'
+Traceback (most recent call last):
+  File "c:\Users\ilham\Desktop\Ayan\web_scrapper\main.py", line 44, in run_pipeline
+    save_to_csv(df, "data/processed/quotes.csv")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ilham\Desktop\Ayan\web_scrapper\storage\save_csv.py", line 2, in save_to_csv
+    df.to_csv(filename, index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\core\generic.py", line 3988, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        path_or_buf,
+        ^^^^^^^^^^^^
+    ...<14 lines>...
+        storage_options=storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\formats\format.py", line 1025, in to_csv
+    csv_formatter.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ~~~~~~~~~~^
+        self.filepath_or_buffer,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        storage_options=self.storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as handles:
+    ^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\common.py", line 793, in get_handle
+    check_parent_directory(str(handle))
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\common.py", line 652, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'data\processed'
+2026-04-05 11:36:09,877 - INFO - \U0001f680 Pipeline started
+2026-04-05 11:36:09,877 - INFO - Scraping static data...
+2026-04-05 11:36:18,494 - INFO - Scraping dynamic data...
+2026-04-05 11:36:28,337 - INFO - Total records scraped: 60
+2026-04-05 11:36:28,337 - INFO - Cleaning data...
+2026-04-05 11:36:28,341 - INFO - Saving to CSV...
+2026-04-05 11:36:28,343 - ERROR - \u274c Pipeline failed: Cannot save file into a non-existent directory: 'data\processed'
+Traceback (most recent call last):
+  File "c:\Users\ilham\Desktop\Ayan\web_scrapper\main.py", line 44, in run_pipeline
+    save_to_csv(df, "data/processed/quotes.csv")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ilham\Desktop\Ayan\web_scrapper\storage\save_csv.py", line 2, in save_to_csv
+    df.to_csv(filename, index=False)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\core\generic.py", line 3988, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        path_or_buf,
+        ^^^^^^^^^^^^
+    ...<14 lines>...
+        storage_options=storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\formats\format.py", line 1025, in to_csv
+    csv_formatter.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
+    with get_handle(
+         ~~~~~~~~~~^
+        self.filepath_or_buffer,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        storage_options=self.storage_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as handles:
+    ^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\common.py", line 793, in get_handle
+    check_parent_directory(str(handle))
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ilham\Desktop\Ayan\web_scrapper\.venv\Lib\site-packages\pandas\io\common.py", line 652, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'data\processed'
